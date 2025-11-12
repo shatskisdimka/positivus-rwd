@@ -1,0 +1,11 @@
+.services {
+    &__list {
+        &:not(:last-child) {
+            @include mobile {
+                margin-bottom: 70px;
+            }
+
+            margin-bottom: 100px;
+        }
+    }
+}

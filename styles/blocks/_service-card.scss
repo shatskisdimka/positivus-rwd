@@ -1,0 +1,96 @@
+.service-card {
+  @include mobile {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 27px;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 310px;
+  padding: 50px;
+  background-color: var(--color-gray);
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+
+  &--accent-bg {
+    background-color: var(--color-accent);
+  }
+
+  &--dark-bg {
+    background-color: var(--color-dark);
+  }
+
+  &__body {
+    @include mobile {
+      display: contents;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+  }
+
+  &__title {
+    @include mobile {
+      grid-column: -1 / 1;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__image {
+    @include desktop {
+      min-width: 50%;
+    }
+    @include mobile{
+      max-width: 165px;
+    }
+
+    align-self: center;
+  }
+
+  &__link {
+    @include mobile {
+      align-self: end;
+    }
+
+    @include hover {
+        opacity: 0.7;
+    }
+    --serviceCardLinkIconColor: var(--color-accent);
+
+    align-items: center;
+    column-gap: 15px;
+    font-size: 20px;
+
+    &--light {
+        --serviceCardLinkIconColor: var(--color-dark);
+
+        color: var(--color-light)
+    }
+
+    &-icon-wrapper {
+      @include flex-center;
+      @include square(41px);
+
+      background-color: currentColor;
+      border-radius: 50%;
+
+      svg {
+        color: var(--serviceCardLinkIconColor);
+      }
+    }
+
+    &-label {
+      @include mobile {
+        @include visually-hidden;
+      }
+    }
+  }
+}

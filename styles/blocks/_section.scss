@@ -1,0 +1,30 @@
+.section {
+  padding-block: var(--section-padding-y);
+
+  &--hidden-x {
+    overflow-x: hidden;
+  }
+
+  &__header {
+    @include mobile {
+      flex-direction: column;
+      row-gap: 30px;
+      text-align: center;
+    }
+
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    &:not(:last-child) {
+      @include mobile {
+        padding-bottom: 40px;
+      }
+      padding-bottom: 80px;
+    }
+  }
+
+  &__description {
+    max-width: 580px;
+  }
+}
